@@ -29,7 +29,11 @@ Root
 
 |---------- train_segmentation_3D.py # for patient-level task
 
+|---------- train_bi_LSTM.py # for slice-level LSTM
+
 |---------- test_majority_voting.py # for slice-level voting system
+
+|---------- test_bi_LSTM.py # for slice-level LSTM
 
 |---------- utils_folder.py
 
