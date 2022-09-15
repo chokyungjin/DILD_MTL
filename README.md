@@ -73,8 +73,15 @@ CUDA_VISIBLE_DEVICES=0 python train_segmentation_3D.py \
 --test_path ./json/test.json \
 --val_path ./json/val.json
 ```
+## Train (2D Bi-LSTM model)
 
-## Test
+```
+CUDA_VISIBLE_DEVICES=0 python train_bi_LSTM.py \
+--root_dir ../pickle/ --num_workers 16 --additional_domain train 
+--tag LSTM_Lung
+```
+
+## Test (Majority voting)
 
 ```
 CUDA_VISIBLE_DEVICES=0 python test_majority_voting.py \
@@ -83,4 +90,10 @@ CUDA_VISIBLE_DEVICES=0 python test_majority_voting.py \
 --backbone unet --naive_lung_mul True \
 --test_path ./json/test.json \
 --resume "your model checkpoint" \
+```
+
+## Test (2D Bi-LSTM model)
+
+```
+CUDA_VISIBLE_DEVICES=0 python test_bi_LSTM.py
 ```
